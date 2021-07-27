@@ -32,7 +32,7 @@ const createItemController = (req, res) => {
         title,
         description,
         ingredients,
-        img,
+        image_url,
         id
     }=req.body
     coffeeModel.find({ title: title }, (error, data) => {
@@ -44,7 +44,7 @@ const createItemController = (req, res) => {
                 title: title,
                 description: description,
                 ingredients: ingredients,
-                img: img
+                image_url: image_url
             })
             newData.save()
             console.log(newData);
@@ -56,12 +56,12 @@ const createItemController = (req, res) => {
 const updateItemController = (req, res) => {
     // provide logic here
     const { idx } = req.params;
-    const { title, description, ingredients, img, id }=req.body
+    const { title, description, ingredients, image_url, id }=req.body
     coffeeModel.findOne({ _id: idx }, (error, item) => {
         item.title = title;
             item.description = description;
             item.ingredients = ingredients;
-            item.img = img;
+        item.image_url = image_url;
             item.id = id
 
         item.save().then(() => {

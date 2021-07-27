@@ -5,7 +5,7 @@ const coffeeSchema=new mongoose.Schema({
     title:String,
     description:String,
     ingredients:String,
-    img:String,
+    image_url:String,
     id:String
 });
 
