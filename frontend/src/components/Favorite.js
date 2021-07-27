@@ -113,7 +113,8 @@ export class Favorite extends Component {
                                 margin: '15px'
                             }}>
 
-                                <Card.Img variant="top" src={item.image_url} />
+                                
+                                <Card.Img variant="top" src={item.img} />
                                 <Card.Body>
                                     <Card.Title>{item.title}</Card.Title>
                                     <Card.Text>
@@ -125,9 +126,9 @@ export class Favorite extends Component {
                                     >Delete</Button>
                                     <Button variant="primary"
                                         onClick={() => this.updateItem(idx)}
-                                    >update</Button>                                </Card.Body>
+                                    >update</Button>
+                                </Card.Body>
                             </Card>
-
                         )
                     })
                 }
